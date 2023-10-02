@@ -15,10 +15,10 @@ int check_cycle(listint_t *list)
 	pos2 = list;
 	while (pos1 && pos2 && pos2->next)
 	{
-		if (pos2 == pos1)
-			return (1);
 		pos2 = pos2->next->next;
 		pos1 = pos1->next;
+		if (pos2 == pos1)
+			return (1);
 	}
 	return (0);
 }
