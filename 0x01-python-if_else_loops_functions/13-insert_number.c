@@ -23,7 +23,8 @@ listint_t *insert_node(listint_t **head, int number)
 			rep = 2;
 			break;
 		}
-		else if (number < surf->next->n)
+		else if (number < surf->next->n ||
+			(surf->next == NULL && number > surf->n))
 		{
 			rep = 1;
 			break;
