@@ -18,7 +18,7 @@ listint_t *insert_node(listint_t **head, int number)
 	surf = *head;
 	while (surf && surf->next)
 	{
-		if (number < surf->next->n)
+		if (number < surf->n || number < surf->next->n)
 		{
 			rep = 1;
 			break;
