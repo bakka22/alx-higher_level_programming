@@ -23,12 +23,13 @@ listint_t *insert_node(listint_t **head, int number)
 			rep = 2;
 			break;
 		}
-		else if (number < surf->next->n ||
-			(surf->next == NULL && number > surf->n))
+		else if (number < surf->next->n)
 		{
 			rep = 1;
 			break;
 		}
+		else if (surf->next->next == NULL && number > surf->next->n)
+			rep = 1;
 		surf = surf->next;
 	}
 	new = malloc(sizeof(listint_t));
