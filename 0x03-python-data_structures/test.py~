@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import print_list_integer
-pls = print_list_integer.print_list_integer
-ls = [1, 2, 4, 6, 3, 6]
-pls(ls)
+print_list_integer = __import__('0-print_list_integer').print_list_integer
+
+my_list = [1, 2, 3, 4, 5]
+print_list_integer(my_list)
