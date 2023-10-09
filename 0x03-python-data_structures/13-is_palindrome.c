@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-*is_palindrome
+*is_palindrome - check if list is a palindrome
 *@head: head of the linked list
 *Return: return 0 if the list is not a palindrom and 1 if it is
 */
@@ -30,7 +30,8 @@ int is_palindrome(listint_t **head)
 	}
 	ptr = *head;
 	idx--;
-	while (ptr)
+	len = len / 2;
+	while (len)
 	{
 		if (ptr->n != list[idx])
 		{
@@ -39,6 +40,7 @@ int is_palindrome(listint_t **head)
 		}
 		ptr = ptr->next;
 		idx--;
+		len--;
 	}
 	free(list);
 	return (1);
