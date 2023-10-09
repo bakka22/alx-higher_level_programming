@@ -9,7 +9,7 @@
 */
 int is_palindrome(listint_t **head)
 {
-	int idx = 0, *list = NULL, len = 0;
+	int idx = 0, *list = NULL, len = 0, len2 = 0;
 	listint_t *ptr = NULL;
 
 	if (!head || !(*head) || (*head)->next == NULL)
@@ -20,18 +20,21 @@ int is_palindrome(listint_t **head)
 		len++;
 		ptr = ptr->next;
 	}
-	list = malloc(sizeof(int) * len);
+	list = malloc(sizeof(int) * (len / 2));
 	ptr = *head;
-	while (ptr)
+	len2 = len / 2;
+	while (len2)
 	{
 		list[idx] = ptr->n;
 		idx++;
 		ptr = ptr->next;
+		len2--;
 	}
-	ptr = *head;
+	if (len % 2 != 0)
+		ptr = ptr->next;
 	idx--;
-	len = len / 2;
-	while (len)
+	len2 = len / 2;
+	while (len2)
 	{
 		if (ptr->n != list[idx])
 		{
@@ -40,7 +43,7 @@ int is_palindrome(listint_t **head)
 		}
 		ptr = ptr->next;
 		idx--;
-		len--;
+		len2--;
 	}
 	free(list);
 	return (1);
