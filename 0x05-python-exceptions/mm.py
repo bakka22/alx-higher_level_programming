@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-ls = ["hello", "go"]
-for i in ls:
-	print("{:d}".format(i))
+def add(a, b):
+	return a + b
+
+r = add
+x = (1, 2)
+r(x[0], x[0])
 
