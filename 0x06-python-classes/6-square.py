@@ -38,21 +38,21 @@ class Square:
         return self.__size ** 2
 
     @property
-	def position(self):
-		""" retrives position
-		args:
-			slef: object
-		Returns:
-			position
-		"""
-		return self.__position
+    def position(self):
+        """ retrives position
+        args:
+            slef: object
+        Returns:
+            position
+        """
+        return self.__position
 
-	@position.setter
-	def position(self, value):
-		if (not isinstance(value, tuple)) or
-		not (value[0] < 0 and value[1] < 0):
-			raise TypeError("position must be a tuple of 2 positive integers")
-		self.__position = value
+    @position.setter
+    def position(self, value):
+        if (not isinstance(value, tuple)) or
+        not (value[0] < 0 and value[1] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     @property
     def size(self):
@@ -89,7 +89,7 @@ class Square:
         x = self.__size
         for i in range(x):
             for y in range(self.__position[0]):
-		print(end=" ")
+        print(end=" ")
             for j in range(x):
                 print("#", end="")
             print()
