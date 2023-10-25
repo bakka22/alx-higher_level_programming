@@ -5,14 +5,14 @@
 class Square:
     """ define a square """
     def __init__(self, sz=None):
-    """ initialize class with args.
+        """ initialize class with args.
 
-    args:
-        self: the opj itself
-        sz: size
+        args:
+            self: the opj itself
+            sz: size
 
-    Returns:
-        nothing
+        Returns:
+            nothing
 
-    """
-    self.__size = sz
+        """
+        self.__size = sz
