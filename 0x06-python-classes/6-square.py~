@@ -16,7 +16,7 @@ class Square:
 
         """
         if (not isinstance(position, tuple)) or\
-        not (position[0] < 0 and position[1] < 0):
+        not (position[0] >= 0 and position[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(sz, int):
             raise TypeError("size must be an integer")
