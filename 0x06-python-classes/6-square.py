@@ -10,20 +10,22 @@ class Square:
         args:
             self: the opj itself
             sz: size
+            position: position of the square
 
         Returns:
             nothing
 
         """
-        if (not isinstance(position, tuple)) or\
-        not (position[0] >= 0 and position[1] >= 0):
+        if (not isinstance(position, tuple)) or \
+           (position[0] < 0 or position[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
+
         if not isinstance(sz, int):
             raise TypeError("size must be an integer")
         if sz < 0:
             raise ValueError("size must be >= 0")
-        self.__size = sz
-        self.__position = position
+        self.size = sz
+        self.position = position
 
     def area(self):
         """ calculate area of the square
@@ -42,6 +44,7 @@ class Square:
         """ retrives position
         args:
             slef: object
+            value: new value
         Returns:
             position
         """
@@ -49,8 +52,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if (not isinstance(value, tuple)) or\
-        not (value[0] >= 0 and value[1] >= 0):
+        if (not isinstance(value, tuple)) or (value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -66,13 +68,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """ set size
-        args:
-            self: object
-            value: new value
-        Returns:
-            nothing
-        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -87,11 +82,12 @@ class Square:
             nothing
         """
         x = self.__size
+        if x == 0:
+            print()
+            return
         for i in range(x):
             for y in range(self.__position[0]):
                 print(end=" ")
             for j in range(x):
                 print("#", end="")
-            print()
-        if x == 0:
             print()
