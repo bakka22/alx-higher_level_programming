@@ -144,12 +144,12 @@ class Rectangle:
     def square(cls, size=0):
         """ square method
         args:
-            cls: ....
-            size: ....
+            cls: the rectangle class
+            size: size of the square
         Returns:
             new instance of a Rectangle
         """
-        return Rectangle(size, size)
+        return cls(size, size)
 
     def __del__(self):
         """ special __del__ destructor

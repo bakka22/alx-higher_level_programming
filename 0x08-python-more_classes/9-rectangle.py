@@ -23,13 +23,13 @@ class Rectangle:
         a = 0
         if not isinstance(width, int):
             a = 1
-        if not isinstance(height, int):
+        elif not isinstance(height, int):
             a = 2
         if a:
             raise TypeError(f"{err[a]} must be an integer")
         if width < 0:
             a = 1
-        if height < 0:
+        elif height < 0:
             a = 2
         if a:
             raise ValueError(f"{err[a]} must be >= 0")
