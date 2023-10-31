@@ -149,7 +149,7 @@ class Rectangle:
         Returns:
             new instance of a Rectangle
         """
-        return cls(size, size)
+        return Rectangle(size, size)
 
     def __del__(self):
         """ special __del__ destructor
