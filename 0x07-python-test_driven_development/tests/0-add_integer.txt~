@@ -30,3 +30,9 @@ TypeError: b must be an integer
 
 >>> add_integer(23.5, 1332)
 1355
+
+>>> add_integer(23.5)
+121
+
+add_integer(-23.5)
+75
