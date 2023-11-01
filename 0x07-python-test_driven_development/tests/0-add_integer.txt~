@@ -36,3 +36,9 @@ TypeError: b must be an integer
 
 add_integer(-23.5)
 75
+
+add_integer([12, 31, 432], [12, 44])
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
