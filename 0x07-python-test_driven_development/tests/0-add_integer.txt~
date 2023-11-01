@@ -21,3 +21,6 @@ TypeError: b must be an integer
 
 >>> add_integer(-234, -231)
 -465
+
+>>> add_integer(2.4, 3.2)
+5
