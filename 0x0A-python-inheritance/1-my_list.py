@@ -23,3 +23,8 @@ class MyList(list):
                     x[j] = x[j + 1]
                     x[j + 1] = tmp
         print(x)
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/1-my_list.txt")
