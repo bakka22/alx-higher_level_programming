@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+""" my list module """
+
+
+class MyList(list):
+    """ mylist class """
+
+    def print_sorted(self):
+
+        """ print a sorted list
+        args:
+            self: ...
+        Returns:
+            nothing
+        """
+
+        x = self[:]
+        tmp = 0
+        for i in range(len(x)):
+            for j in range(len(x) - 1):
+                if x[j] > x[j + 1]:
+                    tmp = x[j]
+                    x[j] = x[j + 1]
+                    x[j + 1] = tmp
+        print(x)
