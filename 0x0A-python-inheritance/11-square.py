@@ -19,7 +19,7 @@ class Square(Rectangle):
         Rectangle.__init__(self, size, size)
         self.__size = size
 
-    def __str__(slef):
+    def __str__(self):
         """ special method
         args:
             self: ...
