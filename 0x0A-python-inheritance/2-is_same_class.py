@@ -11,4 +11,9 @@ def is_same_class(obj, a_class):
         True if the obj is instance False otherwize
     """
 
-    return isinstance(obj, a_class)
+    x = type(obj)
+    x = str(x)
+    x = x[8:-2]
+    if x == a_class.__name__:
+        return True
+    return False
