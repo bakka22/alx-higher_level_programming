@@ -16,4 +16,4 @@ class Square(Rectangle):
         Returns:
             nothing
         """
-        super.__init__(size, size)
+        Rectangle.__init__(self, size, size)
