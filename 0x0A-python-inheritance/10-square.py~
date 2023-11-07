@@ -17,3 +17,4 @@ class Square(Rectangle):
             nothing
         """
         Rectangle.__init__(self, size, size)
+        self.__size = size
