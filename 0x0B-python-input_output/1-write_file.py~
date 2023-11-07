@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-""" read_file function """
+""" write_file function """
 
 
-def read_file(filename=""):
+def write_file(filename="", text=""):
     """ read_file
     args:
         filename: name of the file
+        text: ...
     Returns:
         nothing
     """
     with open(filename, encoding='utf-8') as w:
-        print(w.read(), end="")
+        return w.write(text)
