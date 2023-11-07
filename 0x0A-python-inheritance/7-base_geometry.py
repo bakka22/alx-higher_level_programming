@@ -4,6 +4,23 @@
 
 class BaseGeometry:
     """ base_geometry """
+
+def is_same_class(obj, a_class):
+    """ is_same_class check if object is instance of a class
+    args:
+        obj: the object
+        a_class: the class
+    Returns:
+        True if the obj is instance False otherwize
+    """
+
+    x = type(obj)
+    x = str(x)
+    x = x[8:-2]
+    if x == a_class.__name__:
+        return True
+    return False
+
     def area(self):
         """ area
         args:
@@ -22,7 +39,7 @@ class BaseGeometry:
         Returns:
             nothing
         """
-        if not isinstance(value, int):
+        if not is_same_class(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
