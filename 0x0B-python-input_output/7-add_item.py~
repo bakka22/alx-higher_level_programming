@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """ add and load from json
      adds all arguments to a Python list, and then save them to a file
 """
