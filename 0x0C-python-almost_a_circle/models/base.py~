@@ -71,3 +71,32 @@ class Base:
         for i in x:
             y.append(cls.create(**i))
         return y
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draw rectangles and squares """
+        turtle.bgcolor("black")
+        t = turtle.Turtle()
+        t.ht()
+        color = ['red', 'yellow', 'blue', 'green']
+        for item in list_rectangles + list_squares:
+            turtle.bgcolor("black")
+            x = 0
+            t.pencolor(color[x])
+            t.forward(item.width)
+            t.right(90)
+            x += 1
+            t.pencolor(color[x])
+            t.fd(item.height)
+            t.right(90)
+            x += 1
+            t.pencolor(color[x])
+            t.forward(item.width)
+            t.right(90)
+            x += 1
+            t.pencolor(color[x])
+            t.fd(item.height)
+            time.sleep(5)
+            turtle.clearscreen()
+        turtle.bgcolor("black")
+        turtle.done()
