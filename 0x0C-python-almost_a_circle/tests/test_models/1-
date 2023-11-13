@@ -91,7 +91,7 @@ class TestBase(unittest.TestCase):
         b = Base(i)
         self.assertEqual(b.id, i)
 
-    de custom_id_str(self):
+    def custom_id_str(self):
         '''T custom int id.'''
         i = "FooBar"
         b = Base(i)
