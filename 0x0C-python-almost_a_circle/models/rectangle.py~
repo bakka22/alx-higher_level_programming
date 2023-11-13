@@ -2,7 +2,10 @@
 """ Rectangle module """
 
 
-from base import Base
+import Base
+
+
+base = Base
 
 
 def ty_err(name):
@@ -17,7 +20,7 @@ def va_err(name, idx):
     raise ValueError("{} must be >= 0".format(name))
 
 
-class Rectangle(Base):
+class Rectangle(base):
     """ Rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
