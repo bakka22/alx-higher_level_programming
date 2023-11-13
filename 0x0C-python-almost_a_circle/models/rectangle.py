@@ -2,22 +2,25 @@
 """ Rectangle module """
 
 
-from base import Base
+import Base
 
 
-#def ty_err(name):
-#    """ raises an error """
-#   raise TypeError("{} must be an integer".format(name))
+base = Base
 
 
-#def va_err(name, idx):
-#   """ raises an error """
-#    if idx <= 1:
-#        raise ValueError("{} must be > 0".format(name))
-#    raise ValueError("{} must be >= 0".format(name))
+def ty_err(name):
+    """ raises an error """
+    raise TypeError("{} must be an integer".format(name))
 
 
-class Rectangle(Base):
+def va_err(name, idx):
+    """ raises an error """
+    if idx <= 1:
+        raise ValueError("{} must be > 0".format(name))
+    raise ValueError("{} must be >= 0".format(name))
+
+
+class Rectangle(base):
     """ Rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
