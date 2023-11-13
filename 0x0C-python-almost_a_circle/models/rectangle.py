@@ -2,19 +2,19 @@
 """ Rectangle module """
 
 
-from modules.base import Base
+from base import Base
 
 
-def ty_err(name):
-    """ raises an error """
-    raise TypeError("{} must be an integer".format(name))
+#def ty_err(name):
+#    """ raises an error """
+#   raise TypeError("{} must be an integer".format(name))
 
 
-def va_err(name, idx):
-    """ raises an error """
-    if idx <= 1:
-        raise ValueError("{} must be > 0".format(name))
-    raise ValueError("{} must be >= 0".format(name))
+#def va_err(name, idx):
+#   """ raises an error """
+#    if idx <= 1:
+#        raise ValueError("{} must be > 0".format(name))
+#    raise ValueError("{} must be >= 0".format(name))
 
 
 class Rectangle(Base):
