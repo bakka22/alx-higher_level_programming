@@ -3,21 +3,22 @@
 
 
 import unittest
-from models.square import Square
 from models.rectangle import Rectangle
+from models.base import Base
 
 
-class Square_Test(unittest.TestCase):
+class RectTest(unittest.TestCase):
 	""" test class for Rectangle """
 
 	def test_inherit(self):
 		""" test inherit from base """
-		self.assertEqual(Square.__bases__, (Rectangle, ))
+		self.assertEqual(Rectangle.__bases__, (Base, ))
 
 	def test_has_attr(self):
 		""" test presence of attr """
-		re = Square(44)
-		self.assertTrue(hasattr(re, "size"), True)
+		re = Rectangle(22, 5)
+		self.assertTrue(hasattr(re, "width"), True)
+		self.assertTrue(hasattr(re, "height"), True)
 		self.assertTrue(hasattr(re, "id"), True)
 		self.assertTrue(hasattr(re, "x"), True)
 		self.assertTrue(hasattr(re, "y"), True)
