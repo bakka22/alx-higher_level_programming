@@ -114,7 +114,7 @@ class Base:
         elif cls.__name__ == "Square":
             header = ['id', 'size', 'x', 'y']
         else:
-            return
+            header = []
         if list_objs is None or list_objs == []:
             data = []
         else:
