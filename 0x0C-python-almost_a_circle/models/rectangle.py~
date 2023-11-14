@@ -2,7 +2,7 @@
 """ Rectangle module """
 
 
-from models.base import Base
+from base import Base
 
 
 def ty_err(name):
