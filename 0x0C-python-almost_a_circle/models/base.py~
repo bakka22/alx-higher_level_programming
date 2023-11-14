@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -30,15 +31,18 @@ class Base:
     def save_to_file(cls, list_objs):
         """ save json string to file """
         x = []
-        for i in list_objs:
-            x.append(i.to_dictionary())
+        if list_objs is None or list_objs == []:
+            x = []
+        else:
+            for i in list_objs:
+                x.append(i.to_dictionary())
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(x))
 
     @staticmethod
     def from_json_string(json_string):
         """ return a list from json string """
-        if json_string is None:
+        if json_string is None or json_string == "":
             return []
         x = json.loads(json_string)
         if not isinstance(x, list):
@@ -100,3 +104,48 @@ class Base:
             turtle.clearscreen()
         turtle.bgcolor("black")
         turtle.done()
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ save data to file as csv """
+        data = []
+        if cls.__name__ == "Rectangle":
+            header = ['id', 'width', 'height', 'x', 'y']
+        elif cls.__name__ == "Square":
+            header = ['id', 'size', 'x', 'y']
+        else:
+            return
+        if list_objs is None or list_objs == []:
+            data = []
+        else:
+            for d in list_objs:
+                tmp = []
+                x = d.to_dictionary()
+                for i in header:
+                    tmp.append(x[i])
+                data.append(tmp)
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as f:
+            cw = csv.writer(f)
+            cw.writerow(header)
+            cw.writerows(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ load data from csv file """
+        data = []
+        instances = []
+        header = []
+        try:
+            with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as f:
+                cr = csv.reader(f)
+                header = next(cr)
+                for d in cr:
+                    data.append(d)
+                for i in data:
+                    dict = {}
+                    for j, key in enumerate(header):
+                        dict[key] = i[j]
+                    instances.append(cls.create(**dict))
+        except FileNotFoundError:
+            return []
+        return instances
