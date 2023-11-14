@@ -111,10 +111,8 @@ class Base:
         data = []
         if cls.__name__ == "Rectangle":
             header = ['id', 'width', 'height', 'x', 'y']
-        elif cls.__name__ == "Square":
-            header = ['id', 'size', 'x', 'y']
         else:
-            header = ["id"]
+            header = ['id', 'size', 'x', 'y']
         if list_objs is None or list_objs == []:
             data = []
         else:
@@ -124,7 +122,7 @@ class Base:
                 for i in header:
                     tmp.append(x[i])
                 data.append(tmp)
-        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as f:
+        with open(f"{cls.__name__}.csv", "w", newline='', encoding="utf-8") as f:
             cw = csv.writer(f)
             cw.writerows(data)
 
@@ -135,7 +133,7 @@ class Base:
         instances = []
         header = []
         try:
-            with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as f:
+            with open(f"{cls.__name__}.csv", "r", newline='', encoding="utf-8") as f:
                 cr = csv.reader(f)
                 if cls.__name__ == "Rectangle":
                     header = ['id', 'width', 'height', 'x', 'y']
