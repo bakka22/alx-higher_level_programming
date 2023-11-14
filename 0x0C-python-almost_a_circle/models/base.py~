@@ -144,7 +144,7 @@ class Base:
                 for i in data:
                     dict = {}
                     for j, key in enumerate(header):
-                        dict[key] = i[j]
+                        dict[key] = int(i[j])
                     instances.append(cls.create(**dict))
         except FileNotFoundError:
             return []
