@@ -126,7 +126,6 @@ class Base:
                 data.append(tmp)
         with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as f:
             cw = csv.writer(f)
-            cw.writerow(header)
             cw.writerows(data)
 
     @classmethod
@@ -138,7 +137,10 @@ class Base:
         try:
             with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as f:
                 cr = csv.reader(f)
-                header = next(cr)
+                if cls.__name__ == "Rectangle":
+                    header = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    header = ['id', 'size', 'x', 'y']
                 for d in cr:
                     data.append(d)
                 for i in data:
