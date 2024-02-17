@@ -6,7 +6,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3], host="localhost", port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * from states where name = '{}' order by id".format(sys.argv[4]))
+    cur.execute("SELECT * from states where name = '{:s}'\
+                order by id".format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(f"({row[0]}, '{row[1]}')")
