@@ -14,4 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     row = session.query(State).order_by(State.id).first()
-    print(f"{row.id}: {row.name}")
+    if row:
+        print(f"{row.id}: {row.name}")
+    else:
+        print("Nothing")
