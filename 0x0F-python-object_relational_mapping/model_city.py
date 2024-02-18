@@ -5,7 +5,6 @@ from sqlalchemy.orm import declarative_base
 from model_state import State, Base
 
 
-
 class City(Base):
     """ state table class """
     __tablename__ = "cities"
