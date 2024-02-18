@@ -13,5 +13,5 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).filter_by(id=2).update({'name':'New Mexico'})
+    row = session.query(State).filter_by(id=2).update({'name': 'New Mexico'})
     session.commit()
