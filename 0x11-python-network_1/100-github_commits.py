@@ -11,7 +11,11 @@ if __name__ == '__main__':
     r = requests.get(url, headers=heads)
     dic = sorted(r.json(), key=lambda x:
                  x.get('commit').get('author').get('date'), reverse=True)
-    for i in range(0, 10):
+    if len(dic) >= 10:
+        ran = 10
+    else:
+        ran = len(dic)
+    for i in range(0, ran):
         sha = dic[i].get('sha')
         name = dic[i].get('commit').get('author').get('name')
         print(f"{sha}: {name}")
