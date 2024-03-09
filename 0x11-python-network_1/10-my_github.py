@@ -6,8 +6,7 @@ if __name__ == '__main__':
     url = 'https://api.github.com/users/' + sys.argv[1]
     heads = {'Accept': 'application/vnd.github+json',
              'Authorization': 'Bearer ' + sys.argv[2],
-             'X-GitHub-Api-Version': '2022-11-28'
-            }
+             'X-GitHub-Api-Version': '2022-11-28'}
     r = requests.get(url, headers=heads)
     id = r.json().get('id')
     print(id)
