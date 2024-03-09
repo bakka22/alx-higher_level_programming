@@ -17,5 +17,5 @@ if __name__ == '__main__':
             print(f"[{id}] {name}")
         else:
             print("No result")
-    except ValueError as e:
-        print(f"Not a valid JSON: {e}")
+    except ValueError:
+        print("Not a valid JSON")

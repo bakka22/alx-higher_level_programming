@@ -3,7 +3,7 @@
 if __name__ == '__main__':
     import requests
     import sys
-    url = 'http://topnada.tech'
+    url = 'http://0.0.0.0:5000/search_user'
     if len(sys.argv) < 2:
         payload = {'q': ""}
     else:
