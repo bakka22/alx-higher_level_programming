@@ -9,7 +9,8 @@ if __name__ == '__main__':
     heads = {'Accept': 'application/vnd.github+json',
              'X-GitHub-Api-Version': '2022-11-28'}
     r = requests.get(url, headers=heads)
-    dic = r.json()
+    dic = sorted(r.json(), key=lambda x:
+                 x.get('commit').get('author').get('date'), reverse=True)
     for i in range(0, 10):
         sha = dic[i].get('sha')
         name = dic[i].get('commit').get('author').get('name')
