@@ -6,7 +6,7 @@ request(url, function (err, res, body) {
   if (err) throw err;
   const all = JSON.parse(body);
   for (let i = 0; i < all.length; ++i) {
-    task = all[i];
+    const task = all[i];
     if (task.completed && !result[task.userId]) {
       result[task.userId] = 0;
     }
